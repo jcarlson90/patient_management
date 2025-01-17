@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { Plus_Jakarta_Sans as FontSans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
-const fontSans = Plus_Jakarta_Sans({
-  variable: "--font-jakarta-sans",
+const fontSans = FontSans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
   title: "CarePulse",
-  description: "A healthcare management system",
+  description:
+    "A healthcare patient management System designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.",
+  icons: {
+    icon: "/assets/icons/logo-icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -22,15 +26,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={fontSans.className}> {/* Add font class to html */}
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
+    <html lang="en">
+      <body
+        className={cn(
+          "min-h-screen bg-dark-300 font-sans antialiased",
+          fontSans.variable
+        )}
       >
-        <body className={cn('min-h-screen bg-dark-300 antialiased')}>
+        <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
