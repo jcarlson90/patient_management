@@ -46,7 +46,7 @@ const formSchema = z.object({
         <CustomFormField
         fieldType={FormFieldType.INPUT}
         control={form.control}
-        name="name"
+        name="username"
         label="Full name"
         placeholder="John Doe"
         iconSrc="/assets/icons/user.svg"
