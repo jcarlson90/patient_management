@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Control } from "react-hook-form";
-import { FormFieldType } from "./ui/forms/PatientForm";
+import { FormFieldType } from "./forms/PatientForm";
 import React from "react";
 
 interface CustomProps {
@@ -49,6 +49,8 @@ const CustomFormField = (props: CustomProps) => {
           )}
 
           <RenderField field={field} props={props} />
+
+          <FormMessage className="shad-error" />
         </FormItem>
       )}
     />

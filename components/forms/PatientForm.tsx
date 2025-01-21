@@ -6,7 +6,7 @@ import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
-import CustomFormField from "@/components/CustomFormField"
+import CustomFormField from "../CustomFormField"
 
 export enum FormFieldType {
     INPUT = 'input',
