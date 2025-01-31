@@ -15,7 +15,7 @@ import { UserFormValidation } from "@/lib/validation";
 export enum FormFieldType {
   INPUT = "input",
   TEXTAREA = "textarea",
-  PHONE_INPUT = "phoneInput",
+  PHONE_INPUT = "phoneInput", 
   CHECKBOX = "checkbox",
   DATE_PICKER = "datePicker",
   SELECT = "select",
